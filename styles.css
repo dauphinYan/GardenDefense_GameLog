@@ -73,12 +73,27 @@ section:hover {
     /* 鼠标悬停时的阴影效果 */
 }
 
-.gallery img {
-    margin-top: 5px;
-    border-radius: 8px;
+.gallery{
     width: 100%;
+}
+
+.gallery h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.gallery img {
+    display: block;  /* 将图片设置为块级元素 */
+    margin: 2px auto;  /* 自动设置左右外边距使其水平居中 */
+    border-radius: 8px;
+    width: 80%;
     height: auto;
-    box-shadow: 0 5px 100px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease; /* 平滑的放大/缩小过渡效果 */
+}
+
+.gallery img.enlarged {
+    transform: scale(1.5); /* 放大图片 */
 }
 
 /* 目录栏样式 */
@@ -184,7 +199,7 @@ section:hover {
     }
 
     #menuButton {
-        display: block;
+        display: none;
     }
 
     #fixedImage {
