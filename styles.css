@@ -1,0 +1,198 @@
+/* 定义字体 */
+@font-face {
+    font-family: 'ZiHun';
+    src: url('fonts/ZiHun144Hao-LangYuanTi-2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: #f0f0f0;
+    /* 浅灰色背景 */
+    color: #333;
+    /* 深灰色文本 */
+}
+
+/* 标题栏样式 */
+header {
+    background: #ffffff;
+    color: #ffee00;
+    padding: 15px 0;
+    text-align: center;
+    font-family: 'ZiHun', sans-serif;
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, -2px 2px 0 #000000, 2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000, 0px -2px 0 #000000;
+}
+
+/* 主要内容样式 */
+main {
+    width: 70%;
+    margin: 80px auto 0 auto;
+    /* 上边距 80px，左右自动，底边距 0 */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* 针对标题栏遮挡问题，增加顶部外边距 */
+section {
+    scroll-margin-top: 80px;
+    /* 设置为标题栏的高度 */
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section h2 {
+    text-align: center;
+}
+
+section ul {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* 鼠标悬停时的阴影效果 */
+}
+
+.gallery img {
+    margin-top: 5px;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 5px 100px rgba(0, 0, 0, 0.1);
+}
+
+/* 目录栏样式 */
+#sidebar {
+    position: fixed;
+    height: auto;
+    width: 15%;
+    background: #ffffff;
+    /* 白色背景 */
+    padding: 20px;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    top: 100px;
+    /* 设置顶部距离为50% */
+    left: 7px;
+    /* transform: translateY(-50%); 使其垂直居中 */
+}
+
+#sidebar nav ul {
+    list-style: none;
+}
+
+#sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+#sidebar nav ul li a {
+    color: #333333;
+    /* 深灰色文字 */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+#sidebar nav ul li a:hover {
+    background: #e0e0e0;
+    /* 浅灰色背景 */
+}
+
+/* 固定图片样式 */
+#fixedImage {
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    width: 15%;
+    transition: transform 0.3s ease;
+}
+
+#fixedImage img {
+    width: 100%;
+    height: auto;
+}
+
+#fixedImage:hover {
+    transform: translateY(-5px);
+}
+
+/* 菜单按钮样式 */
+#menuButton {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #000000;
+    /* 黑色背景 */
+    color: #ffffff;
+    /* 白色文字 */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.copyright p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin: 0;
+}
+
+/* 手机视图样式 */
+@media (max-width: 768px) {
+    #sidebar {
+        display: none;
+        width: 100%;
+        height: auto;
+        background: #ffffff;
+        /* 白色背景 */
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    #sidebar nav ul li a {
+        color: #333333;
+        /* 深灰色文字 */
+    }
+
+    #menuButton {
+        display: block;
+    }
+
+    #fixedImage {
+        display: none;
+    }
+
+    main {
+        width: auto;
+        margin-left: 0;
+    }
+}
