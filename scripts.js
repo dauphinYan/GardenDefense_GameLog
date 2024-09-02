@@ -22,9 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    console.log("Selected links:", links);
-
-
     // 平滑滚动到对应位置，并调整偏移量
     links.forEach(link => {
         link.addEventListener('click', function (event) {
@@ -32,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 19;
-            console.log("JavaScript Loaded");
-            console.log("Target Element:", targetElement);
-            console.log("Offset Position:", offsetPosition);
 
             window.scrollTo({
                 top: offsetPosition,
