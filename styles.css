@@ -19,7 +19,7 @@ header {
     padding: 15px 0;
     text-align: center;
     font-family: 'ZiHun', sans-serif;
-    font-size: 30px;
+    font-size: 2em;
     position: fixed;
     top: 0;
     width: 100%;
@@ -29,19 +29,22 @@ header {
 }
 
 .plants {
-    color: #00cc00; /* 绿色 */
+    color: #00cc00;
+    /* 绿色 */
 }
 
 .vs {
-    color: #ffffff; /* 白色 */
+    color: #ffffff;
+    /* 白色 */
 }
 
 .zombies {
-    color: #b0b0b0; /* 灰色 */
+    color: #b0b0b0;
+    /* 灰色 */
 }
 
-.Po{
-    color:#000000;
+.Po {
+    color: #000000;
 }
 
 
@@ -84,7 +87,7 @@ section ul {
     margin-left: 20px;
 }
 
-section hr{
+section hr {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -95,26 +98,30 @@ section:hover {
     /* 鼠标悬停时的阴影效果 */
 }
 
-.gallery{
+.gallery {
     width: 100%;
 }
 
-.gallery h3{
+.gallery h3 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 .gallery img {
-    display: block;  /* 将图片设置为块级元素 */
-    margin: 2px auto;  /* 自动设置左右外边距使其水平居中 */
+    display: block;
+    /* 将图片设置为块级元素 */
+    margin: 2px auto;
+    /* 自动设置左右外边距使其水平居中 */
     width: 80%;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease; /* 平滑的放大/缩小过渡效果 */
+    transition: transform 0.3s ease;
+    /* 平滑的放大/缩小过渡效果 */
 }
 
 .gallery img.enlarged {
-    transform: scale(1.5); /* 放大图片 */
+    transform: scale(1.5);
+    /* 放大图片 */
 }
 
 /* 目录栏样式 */
@@ -230,5 +237,9 @@ section:hover {
     main {
         width: auto;
         margin-left: 0;
+    }
+
+    header {
+        font-size: 1em;
     }
 }
