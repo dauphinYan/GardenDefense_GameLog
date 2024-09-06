@@ -10,11 +10,12 @@
 </head>
 
 <body>
-    <header> 
-        <span class="plants">Plants</span> <span class="vs">VS</span> <span class="zombies">Zombies</span><span class="Po"> - </span>Garden Defense
+    <header>
+        <span class="plants">Plants</span> <span class="vs">VS</span> <span class="zombies">Zombies</span><span
+            class="Po"> - </span>Garden Defense
         <button id="menuButton">目录</button>
     </header>
-    
+
 
     <aside id="sidebar">
         <nav>
@@ -137,7 +138,8 @@
             <hr>
             <h3>2024年9月2日</h3>
             <p>游戏最后更改时间在8.25，仅开发了一个月。开发原因主要有二：一、 检验一下这半年来的学习成果；二、 近些日子杂交版的爆火让我产生了“ 为什么我不能也做一款同人游戏 ”的念头。于是，说干就干。</p>
-            <p>这次开发决定尝试踏入此前未曾接触的领域  <b>多人游戏</b>  。开发的过程亦是学习的过程，从未接触这一领域的我在初期遇到了众多困难，查阅官方文档、官方论坛提问、开发群交流、咸鱼带价提问……常常一个功能实现一天，但成功时的喜悦是其他事物带给不了的。</p>
+            <p>这次开发决定尝试踏入此前未曾接触的领域 <b>多人游戏</b>
+                。开发的过程亦是学习的过程，从未接触这一领域的我在初期遇到了众多困难，查阅官方文档、官方论坛提问、开发群交流、咸鱼带价提问……常常一个功能实现一天，但成功时的喜悦是其他事物带给不了的。</p>
             <p>目前还未接触过UC++开发，所以游戏目前只是纯蓝图开发，计划在接下来的一年时间学习UC++。游戏我会坚持制作下去，期待未来大家能玩到本游戏。</p>
             <hr>
         </section>
@@ -168,6 +170,15 @@
     <aside id="fixedImage">
         <img src="./Image/花园保卫战(文字).png" alt="游戏名">
     </aside>
+
+    <div id="music-player">
+        <button id="playPauseBtn" class="play">
+            <img id="icon" src="./Image/Player/Play.png" alt="播放">
+            <span id="musicName">音乐名</span>
+        </button>
+    </div>
+    <audio id="audio" src=".mp3"></audio>
+
 
     <script src="scripts.js"></script>
 </body>

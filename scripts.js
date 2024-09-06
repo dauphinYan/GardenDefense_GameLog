@@ -49,4 +49,34 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleEnlarge(this);
         });
     });
+
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const audio = document.getElementById('audio');
+    const icon = document.getElementById('icon');
+
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.classList.remove('play');
+            playPauseBtn.classList.add('pause');
+            icon.src = '/Image/Player/Pause.png'; // 更新图标为暂停图标
+        } else {
+            audio.pause();
+            playPauseBtn.classList.remove('pause');
+            playPauseBtn.classList.add('play');
+            icon.src = '/Image/Player/Play.png'; // 更新图标为播放图标
+        }
+    });
+
+    audio.addEventListener('play', () => {
+        playPauseBtn.classList.remove('play');
+        playPauseBtn.classList.add('pause');
+        icon.src = '/Image/Player/Pause.png'; // 更新图标为暂停图标
+    });
+
+    audio.addEventListener('pause', () => {
+        playPauseBtn.classList.remove('pause');
+        playPauseBtn.classList.add('play');
+        icon.src = '/Image/Player/Play.png'; // 更新图标为播放图标
+    });
 });
