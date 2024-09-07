@@ -14,7 +14,7 @@
 
 /* 标题栏样式 */
 header {
-    background: #ffffff;
+    background: #904915;
     color: #ffee00;
     padding: 15px 0;
     text-align: center;
@@ -44,17 +44,16 @@ header {
 }
 
 .Po {
-    color: #000000;
+    color: #ffffff;
 }
 
 
 body {
-    font-family: 'Roboto', sans-serif;
+    
     line-height: 1.6;
-    background: #f0f0f0;
-    /* 浅灰色背景 */
-    color: #333;
-    /* 深灰色文本 */
+    /* background: #f0f0f0; */
+    background: #fdc886;
+    color: #000000;
 }
 
 /* 主要内容样式 */
@@ -127,20 +126,41 @@ section:hover {
 /* 目录栏样式 */
 #sidebar {
     position: fixed;
-    height: auto;
+    height: 70%;
     width: 15%;
-    background: #ffffff;
-    /* 白色背景 */
+    background: #904915;
     padding: 20px;
-    overflow-y: auto;
     transition: width 0.3s ease;
     border-radius: 8px;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
     top: 100px;
-    /* 设置顶部距离为50% */
     left: 7px;
-    /* transform: translateY(-50%); 使其垂直居中 */
+    display: flex;
+    flex-direction: column;
+    font-family: 'ZiHun', sans-serif;
 }
+
+/* 目录标题保持不动 */
+#sidebar h2 {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+
+/* 使目录项可以滚动 */
+#sidebar nav {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#sidebar nav {
+    scrollbar-width: none;
+}
+
 
 #sidebar nav ul {
     list-style: none;
@@ -148,13 +168,14 @@ section:hover {
 
 #sidebar nav ul li {
     margin-bottom: 10px;
+    width: auto;
 }
 
 #sidebar nav ul li a {
     color: #333333;
+    background: #fdc886;
     /* 深灰色文字 */
     text-decoration: none;
-    font-weight: bold;
     padding: 10px 15px;
     display: block;
     border-radius: 4px;
