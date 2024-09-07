@@ -279,25 +279,23 @@ section:hover {
 }
 
 
+
 /* 手机视图样式 */
 @media (max-width: 768px) {
     #sidebar {
-        display: none;
-        width: 100%;
-        height: auto;
-        background: #ffffff;
-        /* 白色背景 */
-        padding: 10px;
-        border-radius: 0;
-    }
-
-    #sidebar nav ul li a {
-        color: #333333;
-        /* 深灰色文字 */
+        position: fixed;
+        width: auto;
+        left: -100%;
+        transition: left 0.3s ease;
+        z-index: 1000;
     }
 
     #menuButton {
-        display: none;
+        display: block;
+    }
+
+    #sidebar.open {
+        left: 0;
     }
 
     #fixedImage {

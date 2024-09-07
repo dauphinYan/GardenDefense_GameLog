@@ -4,22 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll('aside nav ul li a');
     const headerHeight = document.querySelector('header').offsetHeight;
 
-    // // 菜单按钮点击事件
-    // menuButton.addEventListener('click', function() {
-    //     if (sidebar.style.display === 'block') {
-    //         sidebar.style.display = 'none';
-    //     } else {
-    //         sidebar.style.display = 'block';
-    //     }
-    // });
+    // 菜单按钮点击事件：显示/隐藏侧边栏
+    menuButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        sidebar.classList.toggle('open');
+    });
 
-    // // 点击页面其他部分时关闭侧边栏
-    // document.addEventListener('click', function(event) {
-    //     if (!sidebar.contains(event.target) && event.target !== menuButton) {
-    //         sidebar.style.display = 'none';
-    //     }
-    // });
-
+    // 点击页面其他部分时，隐藏侧边栏
+    document.addEventListener('click', function (event) {
+        if (!sidebar.contains(event.target) && event.target !== menuButton) {
+            sidebar.classList.remove('open');
+        }
+    });
 
 
     // 平滑滚动到对应位置，并调整偏移量
