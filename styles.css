@@ -28,6 +28,18 @@ header {
     text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, -2px 2px 0 #000000, 2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000, 0px -2px 0 #000000;
 }
 
+/* 菜单按钮样式 */
+#menuButton {
+    display: none;
+    position: fixed;
+    top: 13px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    background-color: #904915;
+    border: none;
+}
+
 .plants {
     color: #00cc00;
     /* 绿色 */
@@ -49,7 +61,7 @@ header {
 
 
 body {
-    
+
     line-height: 1.6;
     /* background: #f0f0f0; */
     background: #fdc886;
@@ -204,16 +216,6 @@ section:hover {
     transform: translateY(-5px);
 }
 
-/* 菜单按钮样式 */
-#menuButton {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
 .copyright p {
     font-size: 14px;
     color: #666;
@@ -252,21 +254,23 @@ section:hover {
     height: 20px;
 }
 
-#musicName{
+#musicName {
     font-family: 'ZiHun', sans-serif;
 }
 
-@keyframes rotate {  
-    0% {  
-        transform: rotate(0deg);  
-    }  
-    100% {  
-        transform: rotate(360deg);  
-    }  
-}  
-  
-.rotating {  
-    animation: rotate 2s linear infinite; /* 2秒旋转一圈，无限循环 */  
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotate 2s linear infinite;
+    /* 2秒旋转一圈，无限循环 */
 }
 
 
