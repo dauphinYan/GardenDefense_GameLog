@@ -126,7 +126,7 @@ section:hover {
 /* 目录栏样式 */
 #sidebar {
     position: fixed;
-    height: 70%;
+    height: 65%;
     width: 15%;
     background: #904915;
     padding: 20px;
@@ -168,7 +168,6 @@ section:hover {
 
 #sidebar nav ul li {
     margin-bottom: 10px;
-    width: auto;
 }
 
 #sidebar nav ul li a {
@@ -211,16 +210,8 @@ section:hover {
     position: fixed;
     top: 10px;
     left: 10px;
-    background: #000000;
-    /* 黑色背景 */
-    color: #ffffff;
-    /* 白色文字 */
-    border: none;
-    padding: 10px;
     cursor: pointer;
     z-index: 1001;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .copyright p {
