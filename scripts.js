@@ -53,30 +53,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const playPauseBtn = document.getElementById('playPauseBtn');
     const audio = document.getElementById('audio');
     const icon = document.getElementById('icon');
+    const musicNameSpan = document.getElementById('musicName');
 
-    playPauseBtn.addEventListener('click', () => {
+    // 从audio元素的src属性中提取文件名  
+    var src = audio.src;
+    var fileName = src.substring(src.lastIndexOf('/') + 1);
+    fileName = fileName.split('?')[0];  // 如果有查询字符串，去掉它
+    fileName = fileName.split('.').slice(0, -1).join('.'); // 移除扩展名
+
+    fileName = decodeURIComponent(fileName);
+    // 设置span元素的文本为文件名  
+    musicNameSpan.textContent = fileName;
+
+    // 切换播放/暂停  
+    playPauseBtn.addEventListener('click', function () {
         if (audio.paused) {
             audio.play();
-            playPauseBtn.classList.remove('play');
-            playPauseBtn.classList.add('pause');
-            icon.src = '/Image/Player/Pause.png'; // 更新图标为暂停图标
+            icon.classList.add('rotating');
         } else {
             audio.pause();
-            playPauseBtn.classList.remove('pause');
-            playPauseBtn.classList.add('play');
-            icon.src = '/Image/Player/Play.png'; // 更新图标为播放图标
+            icon.classList.remove('rotating');
         }
     });
 
-    audio.addEventListener('play', () => {
-        playPauseBtn.classList.remove('play');
-        playPauseBtn.classList.add('pause');
-        icon.src = '/Image/Player/Pause.png'; // 更新图标为暂停图标
-    });
-
-    audio.addEventListener('pause', () => {
+    // 可选：处理音频自然结束时的情况  
+    audio.addEventListener('ended', function () {
+        icon.classList.remove('rotating');
         playPauseBtn.classList.remove('pause');
         playPauseBtn.classList.add('play');
-        icon.src = '/Image/Player/Play.png'; // 更新图标为播放图标
     });
 });

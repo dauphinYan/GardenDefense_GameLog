@@ -211,14 +211,13 @@ section:hover {
 
 #music-player {
     position: fixed;
-    width: 15%;
     bottom: 10px;
     left: 7px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 #playPauseBtn {
-    width: 100%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -241,16 +240,21 @@ section:hover {
     height: 20px;
 }
 
-.play #icon {
-    content: url('./Image/Player/Play.png');
+#musicName{
+    font-family: 'ZiHun', sans-serif;
 }
 
-.pause #icon {
-    content: url('./Image/Player/Pause.png');
-}
-
-#musicName {
-    
+@keyframes rotate {  
+    0% {  
+        transform: rotate(0deg);  
+    }  
+    100% {  
+        transform: rotate(360deg);  
+    }  
+}  
+  
+.rotating {  
+    animation: rotate 2s linear infinite; /* 2秒旋转一圈，无限循环 */  
 }
 
 
