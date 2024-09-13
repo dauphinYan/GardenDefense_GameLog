@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById('sidebar');
     const links = document.querySelectorAll('aside nav ul li a');
     const headerHeight = document.querySelector('header').offsetHeight;
+    const audio = document.getElementById('audio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const icon = document.getElementById('icon');
+    const musicNameSpan = document.getElementById('musicName');
 
     // 菜单按钮点击事件：显示/隐藏侧边栏
     menuButton.addEventListener('click', function (event) {
@@ -16,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebar.classList.remove('open');
         }
     });
-
 
     // 平滑滚动到对应位置，并调整偏移量
     links.forEach(link => {
@@ -33,35 +36,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 定义图片点击放大功能
+    // 图片点击放大功能
     function toggleEnlarge(image) {
         image.classList.toggle('enlarged');
     }
 
-    // 为所有指定的图片添加点击事件，使用 toggleEnlarge 函数
-    const images = document.querySelectorAll('.gallery img');
-    images.forEach(image => {
-        image.addEventListener('click', function () {
-            toggleEnlarge(this);
-        });
+    // 使用事件委托为所有图片添加点击事件，优化性能
+    document.querySelector('.gallery').addEventListener('click', function (event) {
+        if (event.target.tagName === 'IMG') {
+            toggleEnlarge(event.target);
+        }
     });
 
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const audio = document.getElementById('audio');
-    const icon = document.getElementById('icon');
-    const musicNameSpan = document.getElementById('musicName');
-
-    // 从audio元素的src属性中提取文件名  
+    // 音乐播放器功能：提取文件名并显示在页面上
     var src = audio.src;
-    var fileName = src.substring(src.lastIndexOf('/') + 1);
-    fileName = fileName.split('?')[0];  // 如果有查询字符串，去掉它
-    fileName = fileName.split('.').slice(0, -1).join('.'); // 移除扩展名
-
+    var fileName = src.substring(src.lastIndexOf('/') + 1).split('?')[0].split('.').slice(0, -1).join('.');
     fileName = decodeURIComponent(fileName);
-    // 设置span元素的文本为文件名  
     musicNameSpan.textContent = fileName;
 
-    // 切换播放/暂停  
+    // 播放/暂停音频
     playPauseBtn.addEventListener('click', function () {
         if (audio.paused) {
             audio.play();
@@ -72,10 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 可选：处理音频自然结束时的情况  
+    // 音频结束时重置播放按钮状态
     audio.addEventListener('ended', function () {
         icon.classList.remove('rotating');
-        playPauseBtn.classList.remove('pause');
-        playPauseBtn.classList.add('play');
     });
 });
