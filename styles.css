@@ -80,8 +80,7 @@ main {
 /* 针对标题栏遮挡问题，增加顶部外边距 */
 section {
     scroll-margin-top: 80px;
-    /* 设置为标题栏的高度 */
-    background: #ffffff;
+    background:#ffffff;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
@@ -256,6 +255,44 @@ section:hover {
 
 #musicName {
     font-family: 'ZiHun', sans-serif;
+}
+
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.item-description {
+    text-align: center;
+}
+
+.item-description h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.item-description p {
+    font-size: 0.9em;
+    color: #666;
 }
 
 @keyframes rotate {
