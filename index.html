@@ -30,9 +30,9 @@
                 <li><a href="#section_levels">关卡介绍</a></li>
                 <li><a href="#section_plants">植物介绍</a></li>
                 <li><a href="#section_zombies">僵尸介绍</a></li>
+                <li><a href="#section_update_log">更新日志</a></li>
                 <li><a href="#section_author">作者的话</a></li>
                 <li><a href="#section_download">下载地址</a></li>
-                <li><a href="#section_update_log">更新日志</a></li>
             </ul>
         </nav>
     </aside>
@@ -207,47 +207,72 @@
             <h2>僵尸介绍</h2>
             <br>
             <div class="item-container">
-            <div class="item">
-                <img src="Image/Zombies/zombie_tutorial.png" alt="普通僵尸">
-                <div class="item-description">
-                    <h3>普通僵尸</h3>
-                    <p>普通的僵尸，行动缓慢，但数量众多。</p>
+                <div class="item">
+                    <img src="Image/Zombies/zombie_tutorial.png" alt="普通僵尸">
+                    <div class="item-description">
+                        <h3>普通僵尸</h3>
+                        <p>普通的僵尸，行动缓慢，但数量众多。</p>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="Image/Zombies/zombie_tutorial_cone.png" alt="路障僵尸">
-                <div class="item-description">
-                    <h3>路障僵尸</h3>
-                    <p>头戴路障，能承受一定的伤害。</p>
+                <div class="item">
+                    <img src="Image/Zombies/zombie_tutorial_cone.png" alt="路障僵尸">
+                    <div class="item-description">
+                        <h3>路障僵尸</h3>
+                        <p>头戴路障，能承受一定的伤害。</p>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="Image/Zombies/zombie_tutorial_bucket.png" alt="铁桶僵尸">
-                <div class="item-description">
-                    <h3>铁桶僵尸</h3>
-                    <p>身披铁桶，防御力强，需要多次攻击才能击败。</p>
+                <div class="item">
+                    <img src="Image/Zombies/zombie_tutorial_bucket.png" alt="铁桶僵尸">
+                    <div class="item-description">
+                        <h3>铁桶僵尸</h3>
+                        <p>身披铁桶，防御力强，需要多次攻击才能击败。</p>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="Image/Zombies/zombie_modern_newspaper.png" alt="读报僵尸">
-                <div class="item-description">
-                    <h3>读报僵尸</h3>
-                    <p>手持报纸，速度较快，容易突破防线，需及时应对。</p>
+                <div class="item">
+                    <img src="Image/Zombies/zombie_modern_newspaper.png" alt="读报僵尸">
+                    <div class="item-description">
+                        <h3>读报僵尸</h3>
+                        <p>手持报纸，速度较快，容易突破防线，需及时应对。</p>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="Image/Zombies/zombie_tutorial.png" alt="舞王僵尸">
-                <div class="item-description">
-                    <h3>舞王僵尸</h3>
-                    <p>擅长舞蹈，行动灵活，可能会吸引其他僵尸，增加威胁。</p>
+                <div class="item">
+                    <img src="Image/Zombies/zombie_tutorial.png" alt="舞王僵尸">
+                    <div class="item-description">
+                        <h3>舞王僵尸</h3>
+                        <p>擅长舞蹈，行动灵活，可能会吸引其他僵尸，增加威胁。</p>
+                    </div>
                 </div>
-            </div>
-            <h3>僵王博士</h3>
+                <h3>僵王博士</h3>
+                <ul>
+                    <li>较远的攻击距离。</li>
+                    <li>每隔一段时间在前方三个方向生成冰球，血量低于一半时，六个方向生成冰球。</li>
+                    <li>自身周围每隔一定时间随机生成僵尸。</li>
+                </ul>
+        </section>
+
+        <section id="section_update_log">
+            <h2>更新日志</h2>
+            <hr>
+            <h3>版本0.1.1</h3>
+            <p>发布日期：2024 - 09 - 26</p>
+            <p>内容：</p>
             <ul>
-                <li>较远的攻击距离。</li>
-                <li>每隔一段时间在前方三个方向生成冰球，血量低于一半时，六个方向生成冰球。</li>
-                <li>自身周围每隔一定时间随机生成僵尸。</li>
+                <li>对开始界面UI进行了优化，开始页面新增"帮助"、"选项"、"退出"三种选项。</li>
+                <li>游戏地图优化：重置了游戏地图，风格更加写实；修改了地图大小。</li>
+                <li>游戏玩法优化：现在僵尸的主要目标是进入戴夫的房子，若不靠近他们，他们就会无视一切！</li>
+                <li>现在购买的装备类植物会自动攻击了，戴夫也可以拿上斧头去战斗！</li>
+                <li>新增战斗系统：戴夫手持斧头可最多进行三连击，每段伤害递增；僵王博士伤害太高？现在触发完美闪避即可免受伤害！</li>
+                <li>新增植物：坚果墙。</li>
             </ul>
+            <hr>
+            <h3>版本 0.1.0</h3>
+            <p>发布日期：2024 - 09 - 02</p>
+            <p>内容：</p>
+            <ul>
+                <li>初代测试版本发布，不开放下载链接。</li>
+                <li>仅开放“单人游戏”、提供“白天”关卡游玩。</li>
+            </ul>
+            <hr>
         </section>
 
         <section id="section_author">
@@ -261,22 +286,9 @@
             <hr>
         </section>
 
-        <section id="section_update_log">
-            <h2>更新日志</h2>
-            <hr>
-            <h3>版本 0.1.0</h3>
-            <p>发布日期：xxxx - xx - xx</p>
-            <p>内容：</p>
-            <ul>
-                <li>初代测试版本发布，不开放下载链接</li>
-                <li>仅开放“单人游戏”、提供“白天”关卡游玩。</li>
-            </ul>
-            <hr>
-        </section>
-
         <section id="section_download">
             <h2>下载地址</h2>
-            <p>暂无</p>
+            <p>暂未开放</p>
         </section>
     </main>
 
