@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const playPauseBtn = document.getElementById('playPauseBtn');
     const icon = document.getElementById('icon');
     const musicNameSpan = document.getElementById('musicName');
+    const videoContainer = document.querySelector(".video-container");
+    const overlayContent = document.querySelector(".overlay-content");
+    const header = document.querySelector("header");
+    const main = document.querySelector("main");
+
 
     // 菜单按钮点击事件：显示/隐藏侧边栏
     menuButton.addEventListener('click', function (event) {
@@ -69,4 +74,32 @@ document.addEventListener("DOMContentLoaded", function () {
     audio.addEventListener('ended', function () {
         icon.classList.remove('rotating');
     });
+
+    const fadeThreshold = 300;
+    const fadeInStart = fadeThreshold + 100; // 内容淡入起始距离
+    document.addEventListener("scroll", function () {
+        const scrollY = window.scrollY;
+        // 视频和覆盖文字淡出
+        if (scrollY < fadeThreshold) {
+            const opacity = 1 - scrollY / fadeThreshold;
+            videoContainer.style.opacity = opacity;
+            overlayContent.style.opacity = opacity;
+        } else {
+            videoContainer.style.opacity = 0;
+            overlayContent.style.opacity = 0;
+        }
+    
+        // 控制标题栏、目录、主体部分的显示与隐藏
+        if (scrollY > fadeInStart) {
+            header.classList.add("visible");
+            sidebar.classList.add("visible");
+            main.classList.add("visible");
+        } else {
+            header.classList.remove("visible");
+            sidebar.classList.remove("visible");
+            main.classList.remove("visible");
+        }
+    });      
+    
 });
+

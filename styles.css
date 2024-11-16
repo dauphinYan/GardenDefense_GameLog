@@ -12,6 +12,69 @@
     box-sizing: border-box;
 }
 
+/* 设置滚动条宽度 */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    /* 视频全屏显示 */
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    font-family: 'ZiHun', sans-serif;
+}
+
+.overlay-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.overlay-content p {
+    margin-left: 200px;
+    font-size: 1.5em;
+}
+
+/* 初始状态 */
+header,
+#sidebar,
+main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 淡入状态 */
+header.visible,
+#sidebar.visible,
+main.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* 标题栏样式 */
 header {
     background: #904915;
@@ -61,18 +124,17 @@ header {
 
 
 body {
-
     line-height: 1.6;
     /* background: #f0f0f0; */
     background: #fdc886;
+    /* background: #000000; */
     color: #000000;
 }
 
 /* 主要内容样式 */
 main {
     width: 70%;
-    margin: 80px auto 0 auto;
-    /* 上边距 80px，左右自动，底边距 0 */
+    margin: 0px auto 0 auto;
     padding: 20px;
     transition: margin-left 0.3s ease;
 }
@@ -80,7 +142,7 @@ main {
 /* 针对标题栏遮挡问题，增加顶部外边距 */
 section {
     scroll-margin-top: 80px;
-    background:#ffffff;
+    background: #ffffff;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
@@ -108,7 +170,7 @@ section:hover {
     /* 鼠标悬停时的阴影效果 */
 }
 
-.gallery {
+/* .gallery {
     width: 100%;
 }
 
@@ -119,22 +181,55 @@ section:hover {
 
 .gallery img {
     display: block;
-    /* 将图片设置为块级元素 */
     margin: 2px auto;
-    /* 自动设置左右外边距使其水平居中 */
     width: 80%;
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    /* 平滑的放大/缩小过渡效果 */
 }
 
 .gallery img.enlarged {
     transform: scale(1.5);
-    /* 放大图片 */
+} */
+
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
 }
 
-/* 目录栏样式 */
+.gallery figure {
+    width: 45%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+}
+
+.gallery figure:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery figure h3 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.gallery figure img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery figure img {
+    width: 100%;
+    height: auto;
+}
+
 #sidebar {
     position: fixed;
     height: 65%;
@@ -160,6 +255,9 @@ section:hover {
     z-index: 1;
     padding-bottom: 10px;
     color: #ffffff;
+
+    /* 文字描边 */
+    -webkit-text-stroke: 1px #000000;
 }
 
 /* 使目录项可以滚动 */
@@ -182,7 +280,7 @@ section:hover {
 }
 
 #sidebar nav ul li a {
-    color: #333333;
+    color: #ffffff;
     background: #fdc886;
     /* 深灰色文字 */
     text-decoration: none;
@@ -190,6 +288,13 @@ section:hover {
     display: block;
     border-radius: 4px;
     transition: background 0.3s ease;
+
+    /* 文字描边 */
+    -webkit-text-stroke: 1px #000000;
+    /* 黑色描边 */
+    text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000,
+        1px -1px 0 #000000, -1px 1px 0 #000000;
+    /* 兼容更多浏览器 */
 }
 
 #sidebar nav ul li a:hover {
